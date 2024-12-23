@@ -1,14 +1,32 @@
-list_1 = []
-for i in range (5):
-    number = int(input(f"Enter your number {i + 1} ="))
-    list_1.append(number)
-top_number = list_1 [0]
-low_number = list_1[0]
-for num in list_1:
-    if num > top_number:
-        top_number = num
-    if num < low_number:
-        low_number = num
-print(f"number list: {list_1}")
-print(f"biggest number: {top_number}")
-print(f"lowest number: {low_number}")
+from gooey import Gooey, GooeyParser
+@Gooey 
+def main():
+    parser = GooeyParser(description="My first GUI")
+    parser.add_argument("number1", type=int, help = 'Enter first Number: ' )
+    parser.add_argument("number2", type=int, help = 'Enter second Number: ')
+    parser.add_argument("number3", type=int, help = 'Enter third Number: ' )
+    parser.add_argument("number4", type=int, help = 'Enter forth Number: ' )
+    args = parser.parse_args()
+    arge_number1 = args.number1 
+    arge_number2 = args.number2 
+    arge_number3 = args.number3
+    arge_number4 = args.number4
+    
+    if arge_number1 % 2 == 0:
+        print('even')
+    else:
+        print('odd')
+    if arge_number2 % 2 == 0:
+        print('even')
+    else:
+        print('odd')
+    if arge_number3 % 2 == 0:
+        print('even')
+    else:
+        print('odd')
+    if arge_number4 % 2 == 0:
+        print('even')
+    else:
+        print('odd')
+    print(args)
+main()
